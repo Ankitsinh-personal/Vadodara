@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <script>
+            var arr = [];
+            for( i=1; i<=10 ; i++)
+            {
+                arr[i] = i.toString();
+            }
+            myfunction();
+            async function myfunction(){
+                for( i=1; i<=10 ; i++){
+                    await anotherfunc();
+                    console.log(arr[i]);
+                }
+            }
+            function anotherfunc()
+            {               
+                var rand = Math.random() * 2001 + 2000;    
+                console.log(rand);        
+                return new Promise(resolve =>  setTimeout(resolve , rand ));  
+            }
+        </script>
+    </body>
+</html>
